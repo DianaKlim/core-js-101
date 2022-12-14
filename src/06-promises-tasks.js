@@ -29,18 +29,16 @@
  *                                                    //  Ask her again.';
  */
 function willYouMarryMe(isPositiveAnswer) {
-  return new Promise(function(resolve, reject) {
+  return new Promise((resolve, reject) => {
     const yes = 'Hooray!!! She said "Yes"!';
     const no = 'Oh no, she said "No".';
     const err = 'Wrong parameter is passed! Ask her again.';
 
     if (isPositiveAnswer === true) {
       resolve(yes);
-    }
-    else if (isPositiveAnswer === false){
+    } else if (isPositiveAnswer === false) {
       resolve(no);
-    }
-      reject(new Error(err));
+    } reject(new Error(err));
   });
 }
 
@@ -61,7 +59,7 @@ function willYouMarryMe(isPositiveAnswer) {
  *
  */
 function processAllPromises(array) {
- return Promise.all(array);
+  return Promise.all(array);
 }
 
 /**
@@ -84,10 +82,10 @@ function processAllPromises(array) {
  *
  */
 function getFastestPromise(array) {
-  return new Promise(function(resolve, reject) {
-    resolve (Promise.all(array));
+  return new Promise((resolve, reject) => {
+    resolve(Promise.all(array));
     reject(new Error(array));
-  })
+  });
 }
 
 /**
